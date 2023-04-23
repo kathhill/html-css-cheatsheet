@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <title>Web Developer Cheatsheet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Oxygen:wght@300&display=swap" rel="stylesheet" />
+    <link href="styles.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+    <section>
+        <h1>Web Developer Reference</h1>
+        <p>In partial fullfillment for the Full-Stack Engineer career path, Codecademy</p>
+        <h2>HTML/CSS</h2>
+        <table>
+            <caption>Grid</caption>
+            <thead>
+                <th>Property</th>
+                <th>Applied to:</th>
+                <th>Description</th>
+                <th>Values</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="code">display: grid</td>
+                    <td>Container/parent</td>
+                    <td>Defines a Container/parent as a CSS grid.</td>
+                    <td>grid is the value</td>
+                </tr>
+                <tr>
+                    <td class="code">grid-template</td>
+                    <td>Container/parent</td>
+                    <td>measures rows and columns</td>
+                    <td>row measurement/column measurement</td>
+                </tr>
+                <tr>
+                    <td class="code">gap</td>
+                    <td>Container/parent</td>
+                    <td>Space between rows and columns (i.e. gutter)</td>
+                    <td>row-gap measure column-gap measure (e.g. gap: 20px 5px)</td>
+                </tr>
+                <tr>
+                    <td class="code">grid-row-start | grid-column-start</td>
+                    <td>Child</td>
+                    <td>Grid line that the item starts on</td>
+                    <td>A number, e.g. 3</td>
+                </tr>
+                <tr>
+                    <td class="code">grid-row-end | grid-column-end</td>
+                    <td>Child</td>
+                    <td>Grid line that the same item ends on</td>
+                    <td>a number, e.g. 5</td>
+                </tr>
+                <tr>
+                    <td class="code">grid-row | grid-column</td>
+                    <td>Child</td>
+                    <td>SHORTHAND for grid-row-start and grid-row-end | grid-column-start and grid-column-end</td>
+                    <td>two numbers, e.g. 3 / 5</td>
+                </tr>
+                <tr>
+                    <td class="code">grid-area</td>
+                    <td>Child</td>
+                    <td>SHORTHAND for grid-row and grid-column together. Use z-index for overlapping (images etc.)</td>
+                    <td>grid-row-start / grid-column-start / grid-row-end / grid-column-end</td>
+                </tr>
+                <tr>
+                    <td class="code">grid-template-areas</td>
+                    <td>Container/parent</td>
+                    <td>Allows the naming of sections of a page to use as values for grid-row and grid-column and grid-area</td>
+                    <td>e.g. "header header" "nav nav" "info services" "footer footer"</td>
+                </tr>
+                <tr>
+                    <td class="code">justify-items</td>
+                    <td>Container/parent</td>
+                    <td>Positions grid items along the x or row axis.</td>
+                    <td>start, end, center, stretch</td>
+                </tr>
+                <tr>
+                    <td class="code">justify-content</td>
+                    <td>Container/parent</td>
+                    <td>Positions the entire grid along the x or row axis.</td>
+                    <td>start, end, center, stretch, space-around, space-between, space-evenly</td>
+                </tr>
+                <tr>
+                    <td class="code">justify-self</td>
+                    <td>Child</td>
+                    <td>Specifies how an individual element should position itself with respect to the x or row axis. Overrides justify-iems.</td>
+                    <td>start, end, center, stretch</td>
+                </tr>
+                <tr>
+                    <td class="code">align-items</td>
+                    <td>Container/parent</td>
+                    <td>Positions items along the y or column axis, top to bottom</td>
+                    <td>start, end, center, stretch</td>
+                </tr>
+                <tr>
+                    <td class="code">align-content</td>
+                    <td>Container/parent</td>
+                    <td>Positions the rows along the y or column axis, from top to bottom</td>
+                    <td>start, end, center, stretch, space-around, space-between, space-evenly</td>
+                </tr>
+                <tr>
+                    <td class="code">align-self</td>
+                    <td>Child</td>
+                    <td>Specifies how an individual element should position itself with respect to the y or column axis. Overrides align-iems.</td>
+                    <td>start, end, center, stretch</td>
+                </tr>
+                <tr>
+                    <td class="code">Implicit vs. Explicit Grid</td>
+                    <td>N/A</td>
+                    <td>Implicit grid is an algorithm built into the css grid spec that determines default behavior for the placement of elements when there are more than fit into the grid specified by the CSS.</td>
+                    <td>Default behavior: items fill rows first, adding new rows as necessary. New rows will only be tall enought to contain the content within theml</td>
+                </tr>
+                <tr>
+                    <td class="code">grid-auto-rows</td>
+                    <td>Container/parent</td>
+                    <td>Specifies the size of grid tracks added implicitly (rows in this case).</td>
+                    <td>px, %, fr, repeat()</td>
+                </tr>
+                <tr>
+                    <td class="code">grid-auto-columns</td>
+                    <td>Container/parent</td>
+                    <td>Specifies the size of grid tracks added implicitly (columns in this case).</td>
+                    <td>px, %, fr, repeat()</td>
+                </tr>
+                <tr>
+                    <td class="code">grid-auto-flow</td>
+                    <td>Container/parent</td>
+                    <td>In addition to setting the dimensions of implicitly-added rows and columns, we can specify the order in which they are rendered. Specifies whether new elements should be added to rows or columns</td>
+                    <td>row, column, dense(pairs with row or column and invokes an algorithm that attempts to fill holes earlier in the grid layout if smaller elements are added</td>
+                </tr>
+                
+                <tr>
+                    <td class="code"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <caption>FLEXBOX</caption>
+            <thead>
+                <th>Property</th>
+                <th>Applied to:</th>
+                <th>Description</th>
+                <th>Values</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="code">display: flex</td>
+                    <td>Container/parent</td>
+                    <td>Changes an element to a block-level Container/parent with flex items inside of it.</td>
+                    <td>flex is the value</td>
+                </tr>
+                <tr>
+                    <td class="code">display: inline-flex</td>
+                    <td>Container/parent</td>
+                    <td>allows multiple flex Container/parents to appear inline with each other.</td>
+                    <td>inline-flex is the value</td>
+                </tr>
+                <tr>
+                    <td class="code">justify-content</td>
+                    <td>Container/parent</td>
+                    <td>is used to space items along the main axis.</td>
+                    <td>flex-start (default) | flex-end | center | space-between | space-around</td>
+                </tr>
+                <tr>
+                    <td class="code">align-items</td>
+                    <td>Container/parent</td>
+                    <td>is used to space items along the cross axis.</td>
+                    <td>stretch (default) | flex-start | flex-end | center | baseline</td>
+                </tr>
+                <tr>
+                    <td class="code">flex-grow</td>
+                    <td>Child</td>
+                    <td>is used to specify how much space (and in what proportions) flex items absorb along the main axis.</td>
+                    <td>Must be a number | default is 0</td>
+                </tr>
+                <tr>
+                    <td class="code">flex-shrink</td>
+                    <td>child</td>
+                    <td>is used to specify how much flex items shrink and in what proportions along the main axis.</td>
+                    <td>Must be a number | default is 0</td>
+                </tr>
+                <tr>
+                    <td class="code">flex-basis</td>
+                    <td>Child</td>
+                    <td>is used to specify the initial size of an element styled with flex-grow and/or flex-shrink.</td>
+                    <td>A width in length, percentage, auto, max-content, min-content, fit-content</td>
+                </tr>
+                <tr>
+                    <td class="code">flex</td>
+                    <td>Child</td>
+                    <td>SHORTHAND: is used to specify flex-grow, flex-shrink, and flex-basis in one declaration.</td>
+                    <td>flex-grow flex-shrink flex-basis</td>
+                </tr>
+                <tr>
+                    <td class="code">flex-wrap</td>
+                    <td>Container/parent</td>
+                    <td>specifies that elements should shift along the cross axis if the flex Container/parent is not large enough.</td>
+                    <td>wrap | nowrap (default) | wrap-reverse</td>
+                </tr>
+                <tr>
+                    <td class="code">align-content</td>
+                    <td>Container/parent</td>
+                    <td>is used to space rows along the cross axis.</td>
+                    <td>space-between | space-around | stretch (default) | center | flex-start | flex-end</td>
+                </tr>
+                <tr>
+                    <td class="code">flex-direction</td>
+                    <td>Container/parent</td>
+                    <td>is used to specify the main and cross axes.</td>
+                    <td>column | column-reverse | row (default) | row-reverse</td>
+                </tr>
+                <tr>
+                    <td class="code">flex-flow</td>
+                    <td>Container/parent</td>
+                    <td>SHORTHAND: is used to specify flex-wrap and flex-direction in one declaration.</td>
+                    <td>flex-direction flex-wrap</td>
+                </tr>
+                <tr>
+                    <td class="code">order</td>
+                    <td>Child</td>
+                    <td>Specifies the order of the flex items.</td>
+                    <td>Must be a number | default value is 0</td>
+                </tr>
+                <tr>
+                    <td class="code">align-self</td>
+                    <td>Child</td>
+                    <td>Overrides the defaulot alignment set by the Container/parent's align-items property.</td>
+                    <td>center | flex-start | flex-end</td>
+                </tr>
+                <tr>
+                    <td class="code">Nested flex Container/parents</td>
+                    <td>Container/parent</td>
+                    <td>Flex Container/parents can be nested inside of each other by declaring display: flex or display: inline-flex for children of flex Container/parents.</td>
+                    <td></td>
+                </tr>                
+            </tbody>
+        </table>
+        <table>
+            <caption>SEMANTICS</caption>
+            <thead>
+                <th>Tag</th>
+                <th>Name</th>
+                <th>Link to MDN</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="code">&lt;article&gt;</td>
+                    <td>article</td>
+                    <td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article" target="_blank">Documentation for<span class="code"> article</span></a></td>
+                </tr>
+                <tr>
+                    <td class="code">&lt;aside&gt;</td>
+                    <td>aside</td>
+                    <td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside" target="_blank">Documentation for<span class="code"> aside</span></a></td>
+                </tr>
+                <tr>
+                    <td class="code">&lt;details&gt;</td>
+                    <td>details</td>
+                    <td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details" target="_blank">Documentation for<span class="code"> details</span></a></td>
+                </tr>
+                <tr>
+                    <td class="code">&lt;figcaption&gt;</td>
+                    <td>figcaption</td>
+                    <td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figcaption" target="_blank">Documentation for<span class="code"> figcaption</span></a></td>
+                </tr>
+                <tr>
+                    <td class="code">&lt;figure&gt;</td>
+                    <td>figure</td>
+                    <td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure" target="_blank">Documentation for<span class="code"> figure</span></a></td>
+                </tr>
+                <tr>
+                    <td class="code">&lt;footer&gt;</td>
+                    <td>footer</td>
+                    <td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer" target="_blank">Documentation for<span class="code"> footer</span></a></td>
+                </tr>
+                <tr>
+                    <td class="code">&lt;header&gt;</td>
+                    <td>header</td>
+                    <td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header" target="_blank">Documentation for<span class="code"> header</span></a></td>
+                </tr>
+                <tr>
+                    <td class="code">&lt;main&gt;</td>
+                    <td>main</td>
+                    <td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main" target="_blank">Documentation for<span class="code"> main</span></a></td>
+                </tr>
+                <tr>
+                    <td class="code">&lt;mark&gt;</td>
+                    <td>mark</td>
+                    <td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/mark" target="_blank">Documentation for<span class="code"> mark</span></a></td>
+                </tr>
+                <tr>
+                    <td class="code">&lt;nav&gt;</td>
+                    <td>nav</td>
+                    <td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav" target="_blank">Documentation for<span class="code"> nav</span></a></td>
+                </tr>
+                <tr>
+                    <td class="code">&lt;section&gt;</td>
+                    <td>section</td>
+                    <td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/section" target="_blank">Documentation for<span class="code"> section</span></a></td>
+                </tr>
+                <tr>
+                    <td class="code">&lt;summary&gt;</td>
+                    <td>summary</td>
+                    <td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/summary" target="_blank">Documentation for<span class="code"> summary</span></a></td>
+                </tr>
+                <tr>
+                    <td class="code">&lt;time&gt;</td>
+                    <td>time</td>
+                    <td><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time" target="_blank">Documentation for<span class="code"> time</span></a></td>
+                </tr>
+            </tbody>
+            <tfoot>
+
+            </tfoot>
+        </table>
+    </section>
+        
+</body>
+</html>

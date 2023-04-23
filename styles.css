@@ -1,0 +1,67 @@
+body {
+    font-family: Oxygen, sans-serif;
+    font-size: 1.5em;
+}
+
+section {
+    margin: 0 auto;
+    width: 90%;
+}
+
+h1,
+h2,
+p {
+    text-align: center;
+}
+
+h1 {
+   margin-bottom: 0; 
+}
+
+p {
+    margin-top: 0;
+}
+
+table {
+    border: 4px solid black;
+    margin: 0 auto;
+}
+
+caption {
+    padding: 1em;
+}
+
+thead {
+    background-color: lightseagreen;
+    color: white;
+}
+
+th {
+    border-bottom: 2px solid black;
+}
+
+td {
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 1em 2em;
+}
+
+.code {
+    font-family: monospace;
+}
+
+span .code {
+    font-weight: 600;
+}
+
+td a {
+    color: lightseagreen;
+}
+
+td a:hover,
+td a:active,
+td a:focus {
+    text-decoration: none;
+    background-color: lightseagreen;
+    color: white;
+}
